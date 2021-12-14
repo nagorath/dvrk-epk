@@ -12,17 +12,10 @@ export class PhotoModalComponent implements OnInit {
   galleryType = '';
   promoPhotosArray = [
     '../assets/PromoMain.jpg',
-    '../assets/Promo1.jpg',
-    '../assets/Promo2.jpg',
+    '../assets/Promo1.jpeg',
+    '../assets/Promo2.jpeg',
     '../assets/Promo3.jpg',
     '../assets/Promo4.jpg'
-  ];
-  livePhotosArray = [
-    '../assets/LiveMain.jpg',
-    '../assets/Live1.jpg',
-    '../assets/Live2.jpg',
-    '../assets/Live4.jpg',
-    '../assets/Live3.jpg'
   ];
 
   // tslint:disable-next-line:typedef
@@ -47,23 +40,13 @@ export class PhotoModalComponent implements OnInit {
   }
 
   onRightArrowClick(): void {
-    if (this.galleryType === 'promo') {
-      const currentIndex = this.promoPhotosArray.indexOf(this.imageSrc);
-      this.imageSrc = this.promoPhotosArray[currentIndex + 1 >= this.promoPhotosArray.length ? 0 : currentIndex + 1];
-    } else {
-      const currentIndex = this.livePhotosArray.indexOf(this.imageSrc);
-      this.imageSrc = this.livePhotosArray[currentIndex + 1 >= this.livePhotosArray.length ? 0 : currentIndex + 1];
-    }
+    const currentIndex = this.promoPhotosArray.indexOf(this.imageSrc);
+    this.imageSrc = this.promoPhotosArray[currentIndex + 1 >= this.promoPhotosArray.length ? 0 : currentIndex + 1];
   }
 
   onLeftArrowClick(): void {
-    if (this.galleryType === 'promo') {
-      const currentIndex = this.promoPhotosArray.indexOf(this.imageSrc);
-      this.imageSrc = this.promoPhotosArray[currentIndex === 0 ? this.promoPhotosArray.length - 1 : currentIndex - 1];
-    } else {
-      const currentIndex = this.livePhotosArray.indexOf(this.imageSrc);
-      this.imageSrc = this.livePhotosArray[currentIndex === 0 ? this.livePhotosArray.length - 1 : currentIndex - 1];
-    }
+    const currentIndex = this.promoPhotosArray.indexOf(this.imageSrc);
+    this.imageSrc = this.promoPhotosArray[currentIndex === 0 ? this.promoPhotosArray.length - 1 : currentIndex - 1];
   }
 
   closeModal(): void {

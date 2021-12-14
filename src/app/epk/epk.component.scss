@@ -9,7 +9,7 @@
     height: 50px!important;
     width: 100%;
     display: flex;
-    background-color: #eb2c2c;
+    background-color: #003b94;
     justify-content: center;
     align-items: center;
     position: fixed;
@@ -21,7 +21,7 @@
       font-weight: 700;
       letter-spacing: 3px;
       font-style: italic;
-      color: #ffcaca;
+      color: #b0c6e8;
       margin-right: 50px;
       cursor: pointer;
       transition: all 0.1s ease-out;
@@ -146,7 +146,7 @@
     content: '';
     position: absolute;
     //z-index: 10;
-    cursor: pointer;
+    //cursor: pointer;
     top: 0;
     left: 0;
     -moz-box-shadow: inset 0 -10px 10px -10px #000000;
@@ -162,7 +162,7 @@
     //  margin-bottom: 20px;
     //}
     .title{
-      color: #eb2c2c;
+      color: #003b94;
       font-size: 40px;
       font-weight: 600;
       letter-spacing: 10px;
@@ -241,7 +241,7 @@
       }
     }
     .player-container{
-      height: 450px;
+      //height: 450px;
       width: 1165px;
     }
   }
@@ -254,7 +254,7 @@
     .main-img-container{
       margin-right: 30px;
       img{
-        height: 390px;
+        height: 540px;
         width: 565px;
         object-fit: cover;
         cursor: pointer;
@@ -273,7 +273,7 @@
       .row{
         margin-bottom: 20px;
         img{
-          height: 183px;
+          height: 258px;
           width: 270px;
           object-fit: cover;
           margin-right: 30px;
@@ -372,10 +372,7 @@
     margin-bottom: 35px;
     width: 1165px;
     .partner-img{
-      height: 70px;
-      &.esp-logo {
-        height: 60px;
-      }
+      height: 150px;
     }
   }
   .contact-container{
@@ -426,27 +423,6 @@ footer{
   font-weight: 100;
 }
 
-//@media (max-width: 1300px) {
-//  .site-wrapper{
-//    align-items: center;
-//    .album-detials-container{
-//      width: 1000px!important;
-//    }
-//    .player-container{
-//      width: 1000px!important;
-//    }
-//    .photos-container{
-//      .main-img-container{
-//
-//      }
-//      .more-imgs-container{
-//        img {
-//          width: 190px!important;
-//        }
-//      }
-//    }
-//  }
-//}
 
 @media (max-width: 720px) {
   .site-wrapper{
@@ -522,6 +498,7 @@ footer{
           margin-right: 0;
           margin-top: 20px;
           img{
+            opacity: 1;
             height: 315px;
             width: 315px;
           }

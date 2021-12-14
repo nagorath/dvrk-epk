@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void {
-    if (this.loginFormGroup.get('username').value === 'sh2022' && this.loginFormGroup.get('password').value === 'burn') {
+    if (this.loginFormGroup.get('username').value === 'dvrk' && this.loginFormGroup.get('password').value === 'dvrk22') {
       this.isValidLogin = true;
       this.router.navigate(['/main']);
       localStorage.setItem('loggedIn', 'loggedIn');
