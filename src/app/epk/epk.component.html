@@ -1,0 +1,333 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="push" fixedInViewport="true">
+    <span (click)="onHeaderSectionClick('.music-title', 'music')" [ngClass]="{'selected': selectedSection === 'music'}">MUSIC</span>
+    <span (click)="onHeaderSectionClick('.photos-title', 'photos')" [ngClass]="{'selected': selectedSection === 'photos'}">PHOTOS</span>
+    <span (click)="onHeaderSectionClick('.live-title', 'live')" [ngClass]="{'selected': selectedSection === 'live'}">LIVE</span>
+    <span (click)="onHeaderSectionClick('.videos-title', 'videos')" [ngClass]="{'selected': selectedSection === 'videos'}">VIDEOS</span>
+    <span (click)="onHeaderSectionClick('.bio-title', 'bio')" [ngClass]="{'selected': selectedSection === 'bio'}">BIO</span>
+    <span (click)="onHeaderSectionClick('.partners-title', 'partners')" [ngClass]="{'selected': selectedSection === 'partners'}">PARTNERS</span>
+    <span (click)="onHeaderSectionClick('.contact-title', 'contact')" [ngClass]="{'selected': selectedSection === 'contact'}">CONTACT</span>
+<!--    <div class="social-link fb" onclick="window.open('https://www.facebook.com/shredheadband')">-->
+<!--      FACEBOOK-->
+<!--    </div>-->
+<!--    <div class="social-link inst" onclick="window.open('https://www.instagram.com/shredhead_official/?utm_medium=copy_link')">-->
+<!--      INSTAGRAM-->
+<!--    </div>-->
+<!--    <div class="social-link spotify" onclick="window.open('https://open.spotify.com/artist/2xooJtcCsHoPmD1nnQUMJm?si=2L-CieEmS3KDes0JSFEn5w')">-->
+<!--      SPOTIFY-->
+<!--    </div>-->
+<!--    <div class="social-link youtube" onclick="window.open('https://www.youtube.com/c/Shredheadband')">-->
+<!--      YOUTUBE-->
+<!--    </div>-->
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="site-wrapper" (scroll)="onScroll($event)">
+      <mat-icon *ngIf="isMobile" (click)="sidenav.toggle()">menu</mat-icon>
+      <div class="header-container" *ngIf="showHeader">
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.music-title', 'music')" [ngClass]="{'selected': selectedSection === 'music'}">MUSIC</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.photos-title', 'photos')" [ngClass]="{'selected': selectedSection === 'photos'}">PHOTOS</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.live-title', 'live')" [ngClass]="{'selected': selectedSection === 'live'}">LIVE</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.videos-title', 'videos')" [ngClass]="{'selected': selectedSection === 'videos'}">VIDEOS</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.bio-title', 'bio')" [ngClass]="{'selected': selectedSection === 'bio'}">BIO</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.partners-title', 'partners')" [ngClass]="{'selected': selectedSection === 'partners'}">PARTNERS</span>
+        <span *ngIf="!isMobile" (click)="onHeaderSectionClick('.contact-title', 'contact')" [ngClass]="{'selected': selectedSection === 'contact'}">CONTACT</span>
+      </div>
+      <div class="hero">
+        <div class="social-logos-container">
+          <img src="assets/fb-svg.svg" onclick="window.open('https://www.facebook.com/shredheadband')">
+          <img src="assets/insta-svg.svg" onclick="window.open('https://www.instagram.com/shredhead_official/?utm_medium=copy_link')">
+          <img src="assets/spotify-svg.svg" onclick="window.open('https://open.spotify.com/artist/2xooJtcCsHoPmD1nnQUMJm?si=2L-CieEmS3KDes0JSFEn5w')">
+          <img src="assets/youtube-svg.svg" onclick="window.open('https://www.youtube.com/c/Shredheadband')">
+        </div>
+        <div class="logo-container">
+          <img src="../../assets/logo-white.png" class="logo-img">
+        </div>
+        <div class="menu-content-container">
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.music-title', 'music')" [ngClass]="{'selected': selectedSection === 'music'}">
+            MUSIC
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.photos-title', 'photos')" [ngClass]="{'selected': selectedSection === 'photos'}">
+            PHOTOS
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.live-title', 'live')" [ngClass]="{'selected': selectedSection === 'live'}">
+            LIVE
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.videos-title', 'videos')" [ngClass]="{'selected': selectedSection === 'videos'}">
+            VIDEOS
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.bio-title', 'bio')" [ngClass]="{'selected': selectedSection === 'bio'}">
+            BIO
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.partners-title', 'partners')" [ngClass]="{'selected': selectedSection === 'partners'}">
+            PARTNERS
+          </div>
+          <div *ngIf="!isMobile" (click)="onHeaderSectionClick('.contact-title', 'contact')" [ngClass]="{'selected': selectedSection === 'contact'}">
+            CONTACT
+          </div>
+        </div>
+        <video loop [muted]="'muted'" playsinline autoplay preload="auto" poster="assets/Live4.jpg">
+          <source src="assets/hero-bg3.mp4" type="video/mp4">
+        </video>
+      </div>
+<!--      <div class="logo-container">-->
+<!--        <img src="../assets/logo.png">-->
+<!--      </div>-->
+      <div class="music-container">
+        <div class="album-detials-container">
+          <div class="album-descr-container">
+            <p>
+              The new SHREDHEAD album is going to crush all-comers in 2022. The culmination of years of dogged determination and creative endeavour, “I Saw You Burn” is the sound of a band hitting their stride with maximum force.
+            </p>
+            <br>
+            <p>
+              From the lurching, sledgehammer grooves of the opening title track and the murderous, thrashy sludge of “Bane Of Perseverance”, through to the scabrous, slow-burn attack of “Pitch Black” and the razor-riffing and downtempo pugilism of “44”, the fourth SHREDHEAD album gives modern metal a strident and slamming upgrade, while also delivering a poignant and powerful message about the contemporary human experience.
+            </p>
+            <br>
+            <p>
+              Fuelled by the uplifting power of brute force and collective euphoria, SHREDHEAD are the perfect antidote to the conflicts and negativity of the modern age. “I Saw You Burn” is a monumental piece of work: ferocious, heartfelt and full of ingenuity and verve, it simply refuses to be ignored.
+            </p>
+            <br>
+            <p>
+              Meanwhile, its creators are getting in shape for their next assault on the world’s stages. Being the future of metal is a serious business.
+            </p>
+            <br>
+          </div>
+          <div class="album-cover-container">
+            <img src="../assets/album-cover.jpg" (click)="onPhotoClick('../assets/album-cover.jpg', 'albumArt')">
+            <span *ngIf="!isMobile">(click to enlarge)</span>
+          </div>
+        </div>
+        <div class="title-container music-title">
+          <span class="title">MUSIC</span>
+        </div>
+        <div class="player-container">
+<!--          <iframe [width]="musicPlayerWidth" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1346967502%3Fsecret_token%3Ds-WulDMhLsKPk&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/shredhead-1" title="Shredhead" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/shredhead-1/sets/i-saw-you-burn/s-WulDMhLsKPk" title="Shredhead - I Saw You Burn 2022" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>-->
+          <iframe [width]="musicPlayerWidth" height="450" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1353380575%3Fsecret_token%3Ds-1P6agSemEws&color=%23eb2c2c&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/shredhead-1" title="SHREDHEAD" target="_blank" style="color: #cccccc; text-decoration: none;"></a><a href="https://soundcloud.com/shredhead-1/sets/i-saw-you-burn-2022/s-1P6agSemEws" title="SHREDHEAED - I Saw You Burn (2022)" target="_blank" style="color: #cccccc; text-decoration: none;"></a></div>
+        </div>
+      </div>
+      <div class="title-container photos-title">
+        <span class="title">PROMO SHOOTS</span>
+      </div>
+      <div class="photos-container">
+<!--        <swiper [slidesPerView]="1"-->
+<!--                [spaceBetween]="30"-->
+<!--                [loop]="true"-->
+<!--                [pagination]="{-->
+<!--                  clickable: true-->
+<!--                }"-->
+<!--                [effect]="'fade'"-->
+<!--                *ngIf="isMobile"-->
+<!--                [navigation]="true"-->
+<!--                class="mySwiper">-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/PromoMain.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Promo1.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Promo2.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Promo3.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Promo4.jpg">-->
+<!--          </ng-template>-->
+<!--        </swiper>-->
+        <carousel
+          *ngIf="isMobile"
+          [images]="promoPhotosArray"
+          [objectFit]="'cover'"
+          [cellWidth]="'100%'"
+          cellsToShow="1"
+          borderRadius="5"
+          height="300"
+          [arrowsOutside]="false"
+          [autoplay]="false"
+          [dots]="true"
+          [loop]="true">
+        </carousel>
+        <div class="main-img-container" *ngIf="!isMobile">
+          <img src="../assets/PromoMain.jpg" (click)="onPhotoClick('../assets/PromoMain.jpg', 'promo')">
+        </div>
+        <div class="more-imgs-container" *ngIf="!isMobile">
+          <div class="row">
+            <img src="../assets/Promo1.jpg" (click)="onPhotoClick('../assets/Promo1.jpg', 'promo')">
+            <img src="../assets/Promo2.jpg" (click)="onPhotoClick('../assets/Promo2.jpg', 'promo')">
+          </div>
+          <div class="row">
+            <img src="../assets/Promo3.jpg" (click)="onPhotoClick('../assets/Promo3.jpg', 'promo')">
+            <img src="../assets/Promo4.jpg" (click)="onPhotoClick('../assets/Promo4.jpg', 'promo')">
+          </div>
+        </div>
+      </div>
+      <span *ngIf="!isMobile" class="photos-text">(click to enlarge)</span>
+      <span *ngIf="isMobile" class="photos-text-mobile">(swipe to view more photos)</span>
+      <div class="title-container live-title">
+        <span class="title">LIVE</span>
+      </div>
+      <div class="photos-container">
+<!--        <swiper [navigation]="true" class="mySwiper" *ngIf="isMobile">-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/LiveMain.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Live1.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Live2.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Live4.jpg">-->
+<!--          </ng-template>-->
+<!--          <ng-template swiperSlide>-->
+<!--            <img src="../assets/Live3.jpg">-->
+<!--          </ng-template>-->
+<!--        </swiper>-->
+        <carousel
+          *ngIf="isMobile"
+          [images]="livePhotosArray"
+          [objectFit]="'cover'"
+          [cellWidth]="'100%'"
+          height="300"
+          cellsToShow="1"
+          borderRadius="5"
+          [arrowsOutside]="false"
+          [autoplay]="false"
+          [dots]="true"
+          [loop]="true">
+        </carousel>
+        <div class="main-img-container" *ngIf="!isMobile">
+          <img src="../assets/LiveMain.jpg" (click)="onPhotoClick('../assets/LiveMain.jpg', 'live')">
+        </div>
+        <div class="more-imgs-container" *ngIf="!isMobile">
+          <div class="row">
+            <img src="../assets/Live1.jpg" (click)="onPhotoClick('../assets/Live1.jpg','live')">
+            <img src="../assets/Live2.jpg" (click)="onPhotoClick('../assets/Live2.jpg','live')">
+          </div>
+          <div class="row">
+            <img src="../assets/Live4.jpg" (click)="onPhotoClick('../assets/Live4.jpg','live')">
+            <img src="../assets/Live3.jpg" (click)="onPhotoClick('../assets/Live3.jpg', 'live')">
+          </div>
+        </div>
+      </div>
+      <span *ngIf="!isMobile" class="photos-text">(click to enlarge)</span>
+      <span *ngIf="isMobile" class="photos-text-mobile">(swipe to view more photos)</span>
+      <div class="title-container videos-title">
+        <span class="title">VIDEOS</span>
+      </div>
+      <div class="youtube-player-wrapper">
+        <div class="player-container">
+          <youtube-player
+            [videoId] = selectedVideo
+            suggestedQuality="highres"
+            [height]="videoPlayerHeight"
+            [width]="videoPlayerWidth"
+            [startSeconds]="0">
+          </youtube-player>
+        </div>
+        <div class="thumbnails-container">
+<!--          <swiper class="mySwiper" [slidesPerView]="3" [spaceBetween]="20" *ngIf="isMobile">-->
+<!--            <ng-template swiperSlide>-->
+<!--              <img src="../assets/lu-thumbnail.png" [ngClass]="{'selected': selectedVideo === '5MrMkkLFbMQ'}" (click)="onVideoSelect('5MrMkkLFbMQ')">-->
+<!--            </ng-template>-->
+<!--            <ng-template swiperSlide>-->
+<!--              <img src="../assets/os-thumbnail.jpg" [ngClass]="{'selected': selectedVideo === 'tVz8TrRWbPo'}" (click)="onVideoSelect('tVz8TrRWbPo')">-->
+<!--            </ng-template>-->
+<!--            <ng-template swiperSlide>-->
+<!--              <img src="../assets/bym-thumbnail.jpg" [ngClass]="{'selected': selectedVideo === 'TZ6xMBrwvrk'}" (click)="onVideoSelect('TZ6xMBrwvrk')">-->
+<!--            </ng-template>-->
+<!--          </swiper>-->
+          <img src="../assets/smapler-tn.jpg" [ngClass]="{'selected': selectedVideo === 'cg2LFCcjsX8'}" (click)="onVideoSelect('cg2LFCcjsX8')">
+          <img src="assets/lu-thumbnail.png" [ngClass]="{'selected': selectedVideo === '5MrMkkLFbMQ'}" (click)="onVideoSelect('5MrMkkLFbMQ')">
+          <img src="../assets/os-thumbnail.jpg" [ngClass]="{'selected': selectedVideo === 'tVz8TrRWbPo'}" (click)="onVideoSelect('tVz8TrRWbPo')">
+        </div>
+        <span *ngIf="isMobile" style="margin-top: 10px; color: white; font-weight: 100;">(click to select video)</span>
+      </div>
+      <div class="title-container bio-title">
+        <span class="title">BIO</span>
+      </div>
+      <div class="bio-wrapper">
+        <p>
+          Heavy music is all about power and momentum. With vast amounts of both, Israeli metal mavericks SHREDHEAD are easily identifiable as an unstoppable force. Formed as high school kids in 2009, this ruthlessly tight and destructive quartet have spent the last decade building toward the only moment that matters: the here and now.
+        </p>
+        <br>
+        <p>
+          “Our original musical masterplan was just to blow off some steam as teenagers,” say the band. “But as the years passed we slowly became more ambitious about creating original and unique music, putting on a killer live show, and seeing how far we can push the project.”
+        </p>
+        <br>
+        <p>
+          SHREDHEAD’s music is custom-designed to grab the attention with a steely grip. Masters of brutal, churning riffs that harness the might of the extreme metal old school /and/ the potent, polyrhythmic possibilities of a post-Meshuggah world, they have made steady and inexorable progress across the course of three studio records. From the snotty intensity of 2011’s self-released “Human Nature” debut to the more sophisticated fury of “Death Is Righteous” (2015) and the much-acclaimed “Live Unholy” (2019), this band’s self-evident conviction and commitment have grown in parallel with the refined savagery of the music itself.
+        </p>
+        <br>
+        <p>
+          “At first we wanted to be a thrash/groove metal band like our teenage idols, like Lamb of God, Slayer and Pantera. But over the years, everyone in the band started listening and being influenced by acts outside of our initial childhood thrash loves. Along the way, every band member also got into different music that the others didn’t necessarily get into, and we all bring both our personal and shared influences to the writing process. Now with our fourth album almost ready to be released, we feel that we’re at a point where our music can no longer be fit into one metal subgenre. For the first time, we managed to create something with enough character to stand on its own.”
+        </p>
+        <br>
+        <p>
+          The new SHREDHEAD album is going to crush all-comers in 2022. The culmination of all those years of dogged determination and creative endeavour, “I Saw You Burn” is the sound of a band hitting their stride with maximum force. Showcasing the refreshed and rampaging new line-up of founder members Yotam Nagor (guitar), Roee Kahana (drums) and vocalist Aharon Ragoza, bassist Lee Lavy and new recruit Razi Elbaz (guitar), these are plainly the most devastating songs the Israeli crew have produced to date. From the lurching, sledgehammer grooves of the opening title track and the murderous, thrashy sludge of “Bane Of Perseverance”, through to the scabrous, slow-burn attack of “Pitch Black” and the razor-riffing and downtempo pugilism of “44”, the fourth SHREDHEAD album gives modern metal a strident and slamming upgrade, while also delivering a poignant and powerful message about the contemporary human experience.
+        </p>
+        <br>
+        <p>
+          “From day one all the lyrics we wrote and the messages we tried to deliver are about the difficulties and mental complexities of being a modern human being. Our music mainly reflects our personal journeys as humans in this world - our difficulties to sometimes believe in ourselves, our struggle to be good to ourselves and our surroundings, and the never ending quest of evolving as people.
+        </p>
+        <br>
+        <p>
+          Despite the trials and tribulations of the last two years, SHREDHEAD are grinding ahead at a breathless pace. United by a shared vision of heavy music as an act of both physical and emotional catharsis, they have earned themselves a formidable reputation as a live band and remain laser-focused on taking their music directly to the masses.
+        </p>
+        <br>
+        <p>
+          “We only think about pushing SHREDHEAD to the next step as a professional band, personally growing together with this life project,” they avow. “Our ambition at this point is to continue to make music together and to improve; to tour the world and meet great people, and to pass on the essence of this project to others. If there’s one thing we would like to achieve, it is to inspire people to fearlessly chase their dreams at all costs.”
+        </p>
+        <br>
+        <p>
+          Fuelled by the uplifting power of brute force and collective euphoria, SHREDHEAD are the perfect antidote to the conflicts and negativity of the modern age. “I Saw You Burn” is a monumental piece of work: ferocious, heartfelt and full of ingenuity and verve, it simply refuses to be ignored. Meanwhile, its creators are getting in shape for their next assault on the world’s stages. Being the future of metal is a serious business.
+        </p>
+        <br>
+        <p>
+          “Shows are a therapy where we disconnect and let everything go away. That attitude helped us become fearless and dominant on stage, always giving our all. Before the show we do between 30 minutes and an hour of physical warm-ups so we start the show at 100% from the first second! People attending a SHREDHEAD show can expect to see a band that is as excited and pumped up be there as they are.”
+        </p>
+        <div class="members-container">
+          <span class="title">SHREDHEAD Are:</span>
+          <span class="text">Aharon Ragoza - Vocals</span>
+          <span class="text">Yotam Nagor - Guitars</span>
+          <span class="text">Razi Elbaz - Guitars</span>
+          <span class="text">Lee Lavy - Bass</span>
+          <span class="text">Roee Kahana - Drums</span>
+        </div>
+      </div>
+      <div class="title-container partners-title">
+        <span class="title">PARTNERS</span>
+      </div>
+      <div class="partners-container">
+        <img class="partner-img esp-logo" src="assets/esp-logo-white.png">
+        <img class="partner-img" src="assets/kemper-logo-white-1.png">
+        <img class="partner-img" src="assets/rockstar-logo-white.png">
+        <img class="partner-img" src="assets/coils-logo-white.png">
+        <img class="partner-img" src="assets/intune-logo-white-1.png">
+        <img class="partner-img" src="assets/agner-logo-white-1.png">
+      </div>
+      <div class="title-container contact-title">
+        <span class="title">CONTACT</span>
+      </div>
+      <div class="contact-container">
+<!--        <span class="booking-mngmt-title">MANAGEMENT</span>-->
+        <div class="contact-details-container">
+          <div class="contact-details">
+            <span class="text">Richard Gamba / Sphere Manage</span>
+            <span class="text thin-text">spheremanage@me.com</span>
+            <img src="assets/sphere-logo.png">
+          </div>
+          <div class="contact-details">
+            <span class="text">Bastien Deleule / Sleepless Collective</span>
+            <span class="text thin-text">bastien@sleeplesscollective.com</span>
+            <img class="partner-img" src="assets/sc-logo-white.png">
+            <!--            <span class="text thin-text">+33 7 69 70 16 88</span>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>COPYRIGHT © 2022 SHREDHEAD. ALL RIGHTS RESERVED.</footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

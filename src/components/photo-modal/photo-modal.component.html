@@ -1,0 +1,10 @@
+<mat-icon (click)="closeModal()" class="close-modal-icon">close</mat-icon>
+<img [src]="imageSrc">
+<div class="arrows-container" *ngIf="this.galleryType !== 'albumArt'">
+  <div class="arrow-container" (click)="onLeftArrowClick()">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+  </div>
+  <div class="arrow-container" (click)="onRightArrowClick()">
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </div>
+</div>

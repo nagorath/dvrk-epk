@@ -1,0 +1,9 @@
+<div class="login-page-wrapper">
+  <img src="assets/logo-white.png">
+  <form [formGroup]="loginFormGroup" (ngSubmit)="login()">
+    <input placeholder="Username" type="text" formControlName="username" value="">
+    <input placeholder="Password" type="password" formControlName="password" value="">
+    <span *ngIf="!isValidLogin">Invalid Credentials</span>
+    <button type="submit">Let's Go</button>
+  </form>
+</div>
