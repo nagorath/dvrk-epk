@@ -372,7 +372,7 @@
     margin-bottom: 35px;
     width: 1165px;
     .partner-img{
-      height: 150px;
+      height: 90px;
     }
   }
   .contact-container{
@@ -386,7 +386,7 @@
       margin-bottom: 15px;
     }
     img{
-      width: 240px;
+      width: 210px;
       margin-bottom: 0px;
       margin-top: 25px;
     }
@@ -591,7 +591,6 @@ footer{
       align-items: center;
       width: 100%;
       .partner-img{
-        height: 70px;
         margin-bottom: 22px;
         &:last-child{
           margin-bottom: 0px;
@@ -606,7 +605,7 @@ footer{
         flex-direction: column;
         align-items: center;
         img{
-          width: 240px;
+          width: 210px;
           //margin-bottom: 20px;
         }
         .contact-details {
